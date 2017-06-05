@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="item"
+            type="com.cn.luo.demo.Demo"/>
+
+        <variable
+            name="fragment"
+            type="com.cn.luo.demo.DemoListFragment"/>
+
+        <variable
+            name="position"
+            type="java.lang.Integer"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:onClick="@{()->fragment.onDemoItemClick(item)}">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="@{item.name}"
+            android:gravity="center"
+            android:textSize="20sp"
+            tools:text="The Name of Demo"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:visibility="@{position==fragment.getSizeOfDemoList()-1?View.INVISIBLE:View.VISIBLE}"/>
+
+    </LinearLayout>
+</layout>
