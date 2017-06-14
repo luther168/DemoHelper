@@ -3,40 +3,40 @@
 
     <data>
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
 
         <variable
             name="item"
-            type="com.cn.luo.demo.Demo"/>
+            type="com.cn.luo.demo.model.Demo" />
 
         <variable
             name="fragment"
-            type="com.cn.luo.demo.DemoListFragment"/>
+            type="com.cn.luo.demo.DemoListFragment" />
 
         <variable
             name="position"
-            type="java.lang.Integer"/>
+            type="java.lang.Integer" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:onClick="@{()->fragment.onDemoItemClick(item)}">
+        android:onClick="@{()->fragment.onDemoItemClick(item)}"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="38dp"
-            android:text="@{item.name}"
             android:gravity="center"
+            android:text="@{item.name}"
             android:textSize="20sp"
-            tools:text="The Name of Demo"/>
+            tools:text="The Name of Demo" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/darker_gray"
-            android:visibility="@{position==fragment.getSizeOfDemoList()-1?View.INVISIBLE:View.VISIBLE}"/>
+            android:visibility="@{position==fragment.getSizeOfDemoList()-1?View.INVISIBLE:View.VISIBLE}" />
 
     </LinearLayout>
 </layout>

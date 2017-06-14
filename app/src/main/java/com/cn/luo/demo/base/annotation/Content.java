@@ -1,4 +1,4 @@
-package com.cn.luo.demo.base;
+package com.cn.luo.demo.base.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 @Target({java.lang.annotation.ElementType.TYPE})
 public @interface Content {
 
-    String title();
-    String fragment();
+    Class<?> fragment();
+
 }
 

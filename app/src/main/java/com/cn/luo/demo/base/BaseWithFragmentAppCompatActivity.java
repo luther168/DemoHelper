@@ -9,8 +9,9 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 
 import com.cn.luo.demo.R;
+import com.cn.luo.demo.base.annotation.Content;
 
-public class BaseAppCompatActivity extends AppCompatActivity {
+public class BaseWithFragmentAppCompatActivity extends AppCompatActivity {
 
     protected Context context;
     protected FragmentManager manager;
@@ -20,31 +21,24 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_base_app_compat);
+        setContentView(R.layout.activity_base_with_fragmennt_app_compat);
 
         this.context = this;
-
-        Class<?> clazz = this.getClass();
-
         this.manager = this.getSupportFragmentManager();
         FragmentTransaction transaction = this.manager.beginTransaction();
         transaction.addToBackStack(null);
 
-        if(clazz.isAnnotationPresent(Content.class)){
+        Class<?> clazz = this.getClass();
+        if (clazz.isAnnotationPresent(Content.class)) {
             Content content = clazz.getAnnotation(Content.class);
-            if(content != null){
-                String name = content.fragment();
-                String title = content.title();
+            if (content != null) {
+                Class<?> contentClazz = content.fragment();
 
-                this.getIntent().putExtra("title", title);
-
-                try{
-                    Class<?> contentClazz = Class.forName(name);
+                try {
                     mBaseFragment = (BaseFragment) contentClazz.newInstance();
                     mBaseFragment.setArguments(this.getIntent().getExtras());
                     transaction.replace(R.id.mLayoutFragment, mBaseFragment);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -56,7 +50,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        if(this.mBaseFragment != null){
+        if (this.mBaseFragment != null) {
             this.mBaseFragment.onRestart();
         }
     }
@@ -64,7 +58,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(this.mBaseFragment != null){
+        if (this.mBaseFragment != null) {
             this.mBaseFragment.onActivityResult(requestCode, resultCode, data);
         }
     }
@@ -74,4 +68,5 @@ public class BaseAppCompatActivity extends AppCompatActivity {
         super.onKeyDown(keyCode, event);
         return this.mBaseFragment == null || this.mBaseFragment.onKeyDown(keyCode, event);
     }
+
 }
