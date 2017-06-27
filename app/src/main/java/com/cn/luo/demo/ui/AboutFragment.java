@@ -1,14 +1,9 @@
-package com.cn.luo.demo;
+package com.cn.luo.demo.ui;
 
 
-import android.support.v4.app.Fragment;
-
+import com.cn.luo.demo.R;
 import com.cn.luo.demo.base.BaseFragment;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class AboutFragment extends BaseFragment {
 
     @Override
@@ -18,7 +13,6 @@ public class AboutFragment extends BaseFragment {
 
     @Override
     protected void initUI() {
-
     }
 
 }

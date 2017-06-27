@@ -1,16 +1,13 @@
 package com.cn.luo.demo.model;
 
-import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
-
 public class Demo {
 
     private String name;
-    private Class<? extends Activity> targetActivityClass;
+    private String path;
 
-    public Demo(String name, Class<? extends Activity> targetActivityClass) {
+    public Demo(String name, String path) {
         this.name = name;
-        this.targetActivityClass = targetActivityClass;
+        this.path = path;
     }
 
     public String getName() {
@@ -21,12 +18,11 @@ public class Demo {
         this.name = name;
     }
 
-    public Class<? extends Activity> getTargetActivityClass() {
-        return targetActivityClass;
+    public String getPath() {
+        return path;
     }
 
-    public void setTargetActivityClass(Class<? extends Activity> targetActivityClass) {
-        this.targetActivityClass = targetActivityClass;
+    public void setPath(String path) {
+        this.path = path;
     }
-
 }

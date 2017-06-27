@@ -1,13 +1,15 @@
-package com.cn.luo.demo;
+package com.cn.luo.demo.ui;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.cn.luo.demo.R;
 import com.cn.luo.demo.base.BaseFragment;
 import com.cn.luo.demo.base.GenericRecyclerViewBindAdapter;
 import com.cn.luo.demo.model.Demo;
-import com.cn.luo.demo.util.NavigationUtil;
+import com.cn.luo.demo.router.RouterConstant;
+import com.cn.luo.demo.router.RouterService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ public class DemoListFragment extends BaseFragment {
 
     @Override
     protected void initUI() {
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         List<Demo> demoList = getDemoList();
@@ -36,13 +38,13 @@ public class DemoListFragment extends BaseFragment {
     private List<Demo> getDemoList() {
         List<Demo> demoList = new ArrayList<Demo>();
 
-        demoList.add(new Demo(getString(R.string.about), AboutActivity.class));
+        demoList.add(new Demo(getString(R.string.about), RouterConstant.ABOUT_ACTIVITY));
 
         return demoList;
     }
 
     public void onDemoItemClick(Demo item) {
-        NavigationUtil.toActivity(this, item.getTargetActivityClass());
+        RouterService.toTargetActivity(item.getPath());
     }
 
     public int getSizeOfDemoList() {
