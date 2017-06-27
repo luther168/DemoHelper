@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.cn.luo.demo.ui.AboutFragment">
 
     <TextView
@@ -9,5 +10,12 @@
         android:layout_height="wrap_content"
         android:text="@string/content_of_about"
         android:layout_gravity="center"/>
+
+    <com.cn.luo.demo.view.TitleView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_background="@color/colorPrimary"
+        app:title="@string/about"/>
 
 </FrameLayout>

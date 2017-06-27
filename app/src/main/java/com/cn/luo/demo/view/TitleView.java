@@ -15,9 +15,9 @@ import android.widget.TextView;
 import com.cn.luo.demo.R;
 
 /**
- * @author: luther
- * @description: 自定义标题栏
- * @time: 2017/5/19 14:36
+ * Author: luther
+ * Description: 自定义标题栏
+ * Time: 2017/5/19 14:36
  */
 
 public class TitleView extends RelativeLayout {
@@ -42,12 +42,12 @@ public class TitleView extends RelativeLayout {
     private void initView() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_title, this);
 
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
-        tvRight = (TextView) findViewById(R.id.tvRight);
-        layoutLeft = (FrameLayout) findViewById(R.id.layoutLeft);
-        layoutRight = (FrameLayout) findViewById(R.id.layoutRight);
-        imgLeft = (ImageView) findViewById(R.id.imgLeft);
-        imgRight = (ImageView) findViewById(R.id.imgRight);
+        tvTitle = findViewById(R.id.tvTitle);
+        tvRight = findViewById(R.id.tvRight);
+        layoutLeft = findViewById(R.id.layoutLeft);
+        layoutRight = findViewById(R.id.layoutRight);
+        imgLeft = findViewById(R.id.imgLeft);
+        imgRight = findViewById(R.id.imgRight);
         backgroundView = findViewById(R.id.titleBackgroundView);
     }
 
