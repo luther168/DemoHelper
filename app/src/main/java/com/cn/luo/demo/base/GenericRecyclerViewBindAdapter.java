@@ -1,89 +1,50 @@
 package com.cn.luo.demo.base;
 
-import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
-import android.support.annotation.NonNull;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.cn.luo.demo.BR;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.cn.luo.demo.R;
+import com.cn.luo.demo.model.Demo;
 
 import java.util.List;
 
 /**
  * Created by Administrator on 2016/9/5.
- * 用来实现万能绑定适配器
+ * 用来实现万能绑定适配器（适用于item为DataBinding的布局）
  */
-public class GenericRecyclerViewBindAdapter<T> extends RecyclerView.Adapter<GenericRecyclerViewBindAdapter.ViewHolder> {
-    protected Context context;
-    protected List<T> list;
-    private int layoutId;
+public class GenericRecyclerViewBindAdapter extends BaseQuickAdapter<Demo, GenericViewHolder> {
+
     private Fragment fragment;
 
-    private int mSelectedIndex;
-
-    public GenericRecyclerViewBindAdapter(Context context, Fragment fragment, List<T> list, int layoutId) {
-        this.context = context;
+    public GenericRecyclerViewBindAdapter(Fragment fragment, @LayoutRes int layoutResId, @Nullable List<Demo> data) {
+        super(layoutResId, data);
         this.fragment = fragment;
-        this.list = list;
-        this.layoutId = layoutId;
     }
 
-    public void replaceData(List<T> list) {
-        this.list = list;
-        notifyDataSetChanged();
+    public void extraConvert() {
+
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View convertView = LayoutInflater.from(context).inflate(layoutId, parent, false);
-        return new ViewHolder(convertView, fragment);
+    protected void convert(GenericViewHolder helper, Demo item) {
+        helper.bind(helper.getBinding(), item, fragment);
+        extraConvert();
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.bind(getItem(position), position);
-    }
-
-    @Override
-    public int getItemCount() {
-        return list == null ? 0 : list.size();
-    }
-
-    public T getItem(int position) {
-        return list.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        return super.getItemViewType(position);
-    }
-
-    public static class ViewHolder<T> extends RecyclerView.ViewHolder {
-        private ViewDataBinding binding;
-        private Fragment fragment;
-
-        ViewHolder(View convertView, Fragment fragment) {
-            super(convertView);
-            this.binding = DataBindingUtil.bind(convertView);
-            this.fragment = fragment;
+    protected View getItemView(int layoutResId, ViewGroup parent) {
+        ViewDataBinding binding = DataBindingUtil.inflate(mLayoutInflater, layoutResId, parent, false);
+        if (binding == null) {
+            return super.getItemView(layoutResId, parent);
         }
-
-        void bind(@NonNull T item, Integer position) {
-            binding.setVariable(BR.item, item);
-            if (fragment != null) {
-                binding.setVariable(BR.fragment, fragment);
-            }
-            binding.setVariable(BR.position, position);
-        }
+        View view = binding.getRoot();
+        view.setTag(R.id.BaseQuickAdapter_databinding_support, binding);
+        return view;
     }
 }

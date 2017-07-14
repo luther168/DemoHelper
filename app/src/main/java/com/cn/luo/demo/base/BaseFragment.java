@@ -14,7 +14,8 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment
+    implements View.OnClickListener {
 
     protected View view;
     protected Context context;

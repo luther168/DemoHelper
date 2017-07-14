@@ -5,7 +5,7 @@ import com.cn.luo.demo.base.BaseWithFragmentAppCompatActivity;
 import com.cn.luo.demo.base.annotation.Content;
 import com.cn.luo.demo.router.RouterService;
 
-@Content(fragment = AboutFragment.class)
-@Route(path = RouterService.ABOUT_ACTIVITY)
-public class AboutActivity extends BaseWithFragmentAppCompatActivity {
+@Content(fragment = AndFixFragment.class)
+@Route(path = RouterService.AND_FIX_ACTIVITY)
+public class AndFixActivity extends BaseWithFragmentAppCompatActivity {
 }

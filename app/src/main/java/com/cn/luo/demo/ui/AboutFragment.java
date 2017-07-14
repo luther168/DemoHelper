@@ -25,4 +25,8 @@ public class AboutFragment extends BaseFragment {
         });
     }
 
+    @Override
+    public void onClick(View view) {
+
+    }
 }

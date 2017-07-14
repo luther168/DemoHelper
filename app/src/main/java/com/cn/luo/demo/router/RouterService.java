@@ -10,6 +10,10 @@ import com.alibaba.android.arouter.launcher.ARouter;
  * NOTE:
  */
 public class RouterService {
+
+    public final static String ABOUT_ACTIVITY = "/app/activity/about";
+    public static final String AND_FIX_ACTIVITY = "/app/activity/andFix";
+
     public static void toTargetActivity(String path) {
         ARouter.getInstance()
                 .build(path)

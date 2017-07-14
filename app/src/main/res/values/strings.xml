@@ -8,4 +8,7 @@
 
     <string name="about">About</string>
     <string name="content_of_about">This is the gallery of Android demo.</string>
+    <string name="apply_patch">Apply Patch</string>
+    <string name="call_method">Call Method</string>
+    <string name="and_fix">AndFix</string>
 </resources>

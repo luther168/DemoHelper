@@ -3,7 +3,7 @@ def supportVersion = "25.3.1"
 project.ext {
     android = [
             "compileSdkVersion": 26,
-            "buildToolsVersion": "25.0.2",
+            "buildToolsVersion": "25.0.3",
             "applicationId"    : "com.cn.luo.demo",
             "minSdkVersion"    : 16,
             "targetSdkVersion" : 26,
@@ -13,26 +13,35 @@ project.ext {
 
     dependencies = [
             // android-support
-            "support-v4"       : "com.android.support:support-v4:${supportVersion}",
-            "appcompat-v7"     : "com.android.support:appcompat-v7:${supportVersion}",
-            "design"           : "com.android.support:design:${supportVersion}",
-            "recyclerview-v7"  : "com.android.support:recyclerview-v7:${supportVersion}",
-            "cardview-v7"      : "com.android.support:cardview-v7:${supportVersion}",
-            "constraint-layout": "com.android.support.constraint:constraint-layout:1.0.2",
+            "support-v4"                   : "com.android.support:support-v4:${supportVersion}",
+            "appcompat-v7"                 : "com.android.support:appcompat-v7:${supportVersion}",
+            "design"                       : "com.android.support:design:${supportVersion}",
+            "recyclerview-v7"              : "com.android.support:recyclerview-v7:${supportVersion}",
+            "cardview-v7"                  : "com.android.support:cardview-v7:${supportVersion}",
+            "constraint-layout"            : "com.android.support.constraint:constraint-layout:1.0.2",
 
             // java8-support
-            "stream"           : "com.annimon:stream:1.0.8",
+            "stream"                       : "com.annimon:stream:1.0.8",
 
             // test
-            "junit"            : "junit:junit:4.12",
+            "junit"                        : "junit:junit:4.12",
 
             // Custom logging util
-            "logutils"         : 'com.apkfuns.logutils:library:1.5.1.1',
+            "logutils"                     : 'com.apkfuns.logutils:library:1.5.1.1',
             // Write the logs to the file
-            "log2file"         : 'com.apkfuns.log2file:log2file:1.0.0',
+            "log2file"                     : 'com.apkfuns.log2file:log2file:1.0.0',
 
             // ARouter
-            "arouter-api"      : "com.alibaba:arouter-api:1.2.1.1",
-            "arouter-compiler" : "com.alibaba:arouter-compiler:1.1.2.1",
+            "arouter-api"                  : "com.alibaba:arouter-api:1.2.1.1",
+            "arouter-compiler"             : "com.alibaba:arouter-compiler:1.1.2.1",
+
+            //RecyclerView
+            "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22",
+
+            // AndFix
+            "AndFix"                       : "com.alipay.euler:andfix:0.5.0@aar",
+
+            // Common Util
+            "utilcode"                       : "com.blankj:utilcode:1.7.1",
     ]
 }

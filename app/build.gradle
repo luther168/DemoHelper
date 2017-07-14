@@ -18,10 +18,23 @@ android {
             }
         }
     }
+    //签名
+    signingConfigs {
+        debug {
+
+        }
+        release {// 自己的签名文件
+            storeFile file("doc/com_cn_luo_default_key.jks")
+            storePassword "luohuaitai"
+            keyAlias "default_key"
+            keyPassword "luoluo"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release    //签名
         }
     }
     dataBinding {
@@ -47,4 +60,8 @@ dependencies {
 
     compile rootProject.ext.dependencies["arouter-api"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+
+    compile rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    compile rootProject.ext.dependencies["AndFix"]
+    compile rootProject.ext.dependencies["utilcode"]
 }

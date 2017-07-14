@@ -3,12 +3,12 @@ package com.cn.luo.demo.ui;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.cn.luo.demo.R;
 import com.cn.luo.demo.base.BaseFragment;
 import com.cn.luo.demo.base.GenericRecyclerViewBindAdapter;
 import com.cn.luo.demo.model.Demo;
-import com.cn.luo.demo.router.RouterConstant;
 import com.cn.luo.demo.router.RouterService;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class DemoListFragment extends BaseFragment {
 
         List<Demo> demoList = getDemoList();
 
-        adapter = new GenericRecyclerViewBindAdapter<Demo>(context, this, demoList, R.layout.item_demo);
+        adapter = new GenericRecyclerViewBindAdapter(this, R.layout.item_demo, demoList);
         recyclerView.setAdapter(adapter);
     }
 
@@ -38,7 +38,8 @@ public class DemoListFragment extends BaseFragment {
     private List<Demo> getDemoList() {
         List<Demo> demoList = new ArrayList<Demo>();
 
-        demoList.add(new Demo(getString(R.string.about), RouterConstant.ABOUT_ACTIVITY));
+        demoList.add(new Demo(getString(R.string.about), RouterService.ABOUT_ACTIVITY));
+        demoList.add(new Demo(getString(R.string.and_fix), RouterService.AND_FIX_ACTIVITY));
 
         return demoList;
     }
@@ -51,4 +52,8 @@ public class DemoListFragment extends BaseFragment {
         return adapter.getItemCount();
     }
 
+    @Override
+    public void onClick(View view) {
+
+    }
 }
