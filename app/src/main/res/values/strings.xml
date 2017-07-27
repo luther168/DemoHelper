@@ -11,4 +11,7 @@
     <string name="apply_patch">Apply Patch</string>
     <string name="call_method">Call Method</string>
     <string name="and_fix">AndFix</string>
+    <string name="rx_binding">RxBinding</string>
+    <string name="send_check_num">Send Check Number</string>
+    <string name="the_rest_seconds">剩余%1$s秒</string>
 </resources>

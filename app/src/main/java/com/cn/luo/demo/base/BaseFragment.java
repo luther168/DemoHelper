@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 public abstract class BaseFragment extends Fragment
     implements View.OnClickListener {
 
-    protected View view;
+    protected View rootView;
     protected Context context;
 
     @Nullable
@@ -30,8 +30,8 @@ public abstract class BaseFragment extends Fragment
             return null;
         }
 
-        this.view = inflater.inflate(viewId, container, false);
-        return this.view;
+        this.rootView = inflater.inflate(viewId, container, false);
+        return this.rootView;
     }
 
     @Override

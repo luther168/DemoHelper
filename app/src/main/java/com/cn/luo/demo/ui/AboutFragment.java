@@ -16,7 +16,7 @@ public class AboutFragment extends BaseFragment {
 
     @Override
     protected void initUI() {
-        TitleView titleView = view.findViewById(R.id.titleView);
+        TitleView titleView = (TitleView) rootView.findViewById(R.id.titleView);
         titleView.setLeftOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -32,7 +32,7 @@ public class AndFixFragment extends BaseFragment {
 
     @Override
     protected void initUI() {
-        FragmentAndFixBinding binding = DataBindingUtil.bind(view);
+        FragmentAndFixBinding binding = DataBindingUtil.bind(rootView);
         binding.setFragment(this);
     }
 

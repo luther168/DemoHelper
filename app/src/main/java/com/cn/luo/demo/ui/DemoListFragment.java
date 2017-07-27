@@ -25,7 +25,7 @@ public class DemoListFragment extends BaseFragment {
 
     @Override
     protected void initUI() {
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         List<Demo> demoList = getDemoList();
@@ -40,6 +40,7 @@ public class DemoListFragment extends BaseFragment {
 
         demoList.add(new Demo(getString(R.string.about), RouterService.ABOUT_ACTIVITY));
         demoList.add(new Demo(getString(R.string.and_fix), RouterService.AND_FIX_ACTIVITY));
+        demoList.add(new Demo(getString(R.string.rx_binding), RouterService.RX_BINDING_ACTIVITY));
 
         return demoList;
     }
