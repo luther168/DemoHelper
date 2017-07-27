@@ -17,7 +17,7 @@
         <com.cn.luo.demo.view.TitleView
             android:id="@+id/titleView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btnEnable"
@@ -26,6 +26,25 @@
             android:onClick="@{(view)->listener.onClick(view)}"
             android:text="@string/send_check_num"
             android:textColor="@android:color/holo_red_light" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view)->listener.onClick(view)}"
+            android:hint="@string/input_searched_content"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvSearchResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view)->listener.onClick(view)}"
+            android:text="@string/optimize_click_request" />
 
     </LinearLayout>
 </layout>

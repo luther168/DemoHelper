@@ -14,4 +14,6 @@
     <string name="rx_binding">RxBinding</string>
     <string name="send_check_num">Send Check Number</string>
     <string name="the_rest_seconds">剩余%1$s秒</string>
+    <string name="input_searched_content">Input searched content</string>
+    <string name="optimize_click_request">Optimize the Request</string>
 </resources>
