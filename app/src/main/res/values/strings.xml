@@ -16,4 +16,5 @@
     <string name="the_rest_seconds">剩余%1$s秒</string>
     <string name="input_searched_content">Input searched content</string>
     <string name="optimize_click_request">Optimize the Request</string>
+    <string name="v_layout">VLayout</string>
 </resources>

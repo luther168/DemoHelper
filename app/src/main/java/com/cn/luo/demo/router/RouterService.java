@@ -14,6 +14,7 @@ public class RouterService {
     public final static String ABOUT_ACTIVITY = "/app/activity/about";
     public static final String AND_FIX_ACTIVITY = "/app/activity/andFix";
     public static final String RX_BINDING_ACTIVITY = "/app/activity/rxBinding";
+    public static final String V_LAYOUT_ACTIVITY = "/app/activity/vLayout";
 
     public static void toTargetActivity(String path) {
         ARouter.getInstance()

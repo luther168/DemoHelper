@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.AboutActivity" />
-        <activity android:name=".ui.RxBindingActivity"></activity>
+        <activity android:name=".ui.RxBindingActivity" />
+        <activity android:name=".ui.VLayoutActivity"></activity>
     </application>
 
 </manifest>

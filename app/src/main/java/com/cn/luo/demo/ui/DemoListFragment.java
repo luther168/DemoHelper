@@ -41,6 +41,7 @@ public class DemoListFragment extends BaseFragment {
         demoList.add(new Demo(getString(R.string.about), RouterService.ABOUT_ACTIVITY));
         demoList.add(new Demo(getString(R.string.and_fix), RouterService.AND_FIX_ACTIVITY));
         demoList.add(new Demo(getString(R.string.rx_binding), RouterService.RX_BINDING_ACTIVITY));
+        demoList.add(new Demo(getString(R.string.v_layout), RouterService.V_LAYOUT_ACTIVITY));
 
         return demoList;
     }
