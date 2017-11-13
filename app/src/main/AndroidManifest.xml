@@ -24,7 +24,8 @@
         </activity>
         <activity android:name=".ui.AboutActivity" />
         <activity android:name=".ui.RxBindingActivity" />
-        <activity android:name=".ui.VLayoutActivity"></activity>
+        <activity android:name=".ui.VLayoutActivity" />
+        <activity android:name=".ui.AndFixActivity" />
     </application>
 
 </manifest>
