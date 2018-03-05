@@ -26,6 +26,8 @@
         <activity android:name=".ui.RxBindingActivity" />
         <activity android:name=".ui.VLayoutActivity" />
         <activity android:name=".ui.AndFixActivity" />
+        <activity android:name=".ui.ViewPagerActivity"
+            android:theme="@style/StyledIndicators"/>
     </application>
 
 </manifest>

@@ -22,12 +22,12 @@ project.ext {
             "constraint-layout"            : "com.android.support.constraint:constraint-layout:1.0.2",
 
             //rx
-            "rxandroid"                     : "io.reactivex.rxjava2:rxandroid:2.0.1",
-            "rxbinding"                     : "com.jakewharton.rxbinding2:rxbinding:${rxBindingVersion}",
-            "rxbinding-support-v4"          : "com.jakewharton.rxbinding2:rxbinding-support-v4:${rxBindingVersion}",
-            "rxbinding-appcompat-v7"        : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${rxBindingVersion}",
-            "rxbinding-design"              : "com.jakewharton.rxbinding2:rxbinding-design:${rxBindingVersion}",
-            "rxbinding-recyclerview-v7"     : "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:${rxBindingVersion}",
+            "rxandroid"                    : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            "rxbinding"                    : "com.jakewharton.rxbinding2:rxbinding:${rxBindingVersion}",
+            "rxbinding-support-v4"         : "com.jakewharton.rxbinding2:rxbinding-support-v4:${rxBindingVersion}",
+            "rxbinding-appcompat-v7"       : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${rxBindingVersion}",
+            "rxbinding-design"             : "com.jakewharton.rxbinding2:rxbinding-design:${rxBindingVersion}",
+            "rxbinding-recyclerview-v7"    : "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:${rxBindingVersion}",
 
             // java8-support
             "stream"                       : "com.annimon:stream:1.0.8",
@@ -51,6 +51,9 @@ project.ext {
             "AndFix"                       : "com.alipay.euler:andfix:0.5.0@aar",
 
             // Common Util
-            "utilcode"                       : "com.blankj:utilcode:1.7.1",
+            "utilcode"                     : "com.blankj:utilcode:1.7.1",
+
+            // ViewPager
+            "ViewPagerIndicator"           : "fr.baloomba:viewpagerindicator:2.4.2",
     ]
 }

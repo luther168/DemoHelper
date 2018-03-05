@@ -65,6 +65,7 @@ dependencies {
     compile rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
     compile rootProject.ext.dependencies["AndFix"]
     compile rootProject.ext.dependencies["utilcode"]
+    compile rootProject.ext.dependencies['ViewPagerIndicator']
 
     compile rootProject.ext.dependencies['rxandroid']
     compile rootProject.ext.dependencies['rxbinding']

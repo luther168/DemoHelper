@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/darker_gray"
-            android:visibility="@{position==fragment.getSizeOfDemoList()-1?View.INVISIBLE:View.VISIBLE}" />
+            android:visibility="@{fragment.isLastItemOfDemoList(position)?View.INVISIBLE:View.VISIBLE}" />
 
     </LinearLayout>
 </layout>

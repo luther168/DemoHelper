@@ -42,6 +42,7 @@ public class DemoListFragment extends BaseFragment {
         demoList.add(new Demo(getString(R.string.and_fix), RouterService.AND_FIX_ACTIVITY));
         demoList.add(new Demo(getString(R.string.rx_binding), RouterService.RX_BINDING_ACTIVITY));
         demoList.add(new Demo(getString(R.string.v_layout), RouterService.V_LAYOUT_ACTIVITY));
+        demoList.add(new Demo(getString(R.string.view_pager), RouterService.VIEW_PAGER_ACTIVITY));
 
         return demoList;
     }
@@ -50,8 +51,8 @@ public class DemoListFragment extends BaseFragment {
         RouterService.toTargetActivity(item.getPath());
     }
 
-    public int getSizeOfDemoList() {
-        return adapter.getItemCount();
+    public boolean isLastItemOfDemoList(int position) {
+        return position == adapter.getItemCount() - 1;
     }
 
     @Override
